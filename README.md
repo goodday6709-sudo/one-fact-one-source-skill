@@ -51,8 +51,10 @@ The skill supports three levels of effort:
 Invoke the skill with the syntax supported by the coding agent:
 
 ```text
-Codex:       Use $one-fact-one-source to audit or consolidate this rule.
-Claude Code: /one-fact-one-source audit or consolidate this rule.
+Codex audit:             Use $one-fact-one-source to audit this rule.
+Codex consolidate:       Use $one-fact-one-source to consolidate this rule.
+Claude Code audit:       /one-fact-one-source audit this rule.
+Claude Code consolidate: /one-fact-one-source consolidate this rule.
 Other agents: Ask the agent to use the one-fact-one-source skill by name.
 ```
 
@@ -68,6 +70,8 @@ Consolidate after review:
 
 ```text
 Consolidate this business rule without changing behavior or public identifiers.
+Before editing, verify a clean working tree and record the baseline commit.
+Create a separate consolidation commit only when git writes are explicitly authorized.
 Migrate consumers found through recorded search coverage, remove obsolete
 parallel definitions, run the available checks, and report the before/after
 evidence and any inaccessible mirrors.

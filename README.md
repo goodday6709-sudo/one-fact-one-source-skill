@@ -48,25 +48,32 @@ The skill supports three levels of effort:
 - **Small change**: locate and reuse the existing canonical source without adding parallel logic.
 - **Consolidation or refactor**: migrate consumers, remove old definitions, and run the full validation workflow.
 
-Invoke the skill explicitly when the coding agent supports named skill invocation.
+Invoke the skill with the syntax supported by the coding agent:
+
+```text
+Codex:       Use $one-fact-one-source to audit or consolidate this rule.
+Claude Code: /one-fact-one-source audit or consolidate this rule.
+Other agents: Ask the agent to use the one-fact-one-source skill by name.
+```
 
 Audit first:
 
 ```text
-Use $one-fact-one-source to audit this business rule. Do not modify files.
+Audit this business rule. Do not modify files.
 Report its definitions, consumers, conflicts, and the recommended canonical
-source when the evidence is sufficient.
+source when the evidence is sufficient. Include search coverage and blind spots.
 ```
 
 Consolidate after review:
 
 ```text
-Use $one-fact-one-source to consolidate this business rule without changing
-behavior. Migrate all known consumers, remove parallel definitions, run the
-available checks, and report the before/after evidence.
+Consolidate this business rule without changing behavior or public identifiers.
+Migrate consumers found through recorded search coverage, remove obsolete
+parallel definitions, run the available checks, and report the before/after
+evidence and any inaccessible mirrors.
 ```
 
-The skill uses `rg` for baseline discovery. `jscpd` and `ast-grep` are optional enhancements, not hard dependencies.
+The skill uses `rg` for baseline discovery. `jscpd` and `ast-grep` are optional enhancements when they support the project language, not hard dependencies.
 
 ## License
 

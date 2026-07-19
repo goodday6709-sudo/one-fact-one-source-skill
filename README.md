@@ -2,6 +2,8 @@
 
 An agent-neutral coding skill for consolidating business rules into one canonical source and one canonical name.
 
+It is not a programming tutorial. It is a governance and review skill that helps coding agents avoid creating a second version of an existing business rule.
+
 It helps coding agents:
 
 - reuse existing business-rule implementations before writing new ones;
@@ -33,12 +35,35 @@ Claude Code project installations may also use:
 <project>/.claude/skills/one-fact-one-source/
 ```
 
+## Guides
+
+- [繁體中文快速指南](docs/quickstart.zh-TW.md)
+- [简体中文快速指南](docs/quickstart.zh-CN.md)
+
 ## Usage
 
-Ask the coding agent to consolidate or review a business rule, or invoke the skill explicitly when the agent supports named skill invocation:
+The skill supports three levels of effort:
+
+- **Audit only**: discover and report definitions, consumers, and conflicts without modifying files.
+- **Small change**: locate and reuse the existing canonical source without adding parallel logic.
+- **Consolidation or refactor**: migrate consumers, remove old definitions, and run the full validation workflow.
+
+Invoke the skill explicitly when the coding agent supports named skill invocation.
+
+Audit first:
 
 ```text
-Use $one-fact-one-source to consolidate this eligibility rule without changing behavior.
+Use $one-fact-one-source to audit this business rule. Do not modify files.
+Report its definitions, consumers, conflicts, and the recommended canonical
+source when the evidence is sufficient.
+```
+
+Consolidate after review:
+
+```text
+Use $one-fact-one-source to consolidate this business rule without changing
+behavior. Migrate all known consumers, remove parallel definitions, run the
+available checks, and report the before/after evidence.
 ```
 
 The skill uses `rg` for baseline discovery. `jscpd` and `ast-grep` are optional enhancements, not hard dependencies.

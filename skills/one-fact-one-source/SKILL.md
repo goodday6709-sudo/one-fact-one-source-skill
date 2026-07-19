@@ -17,6 +17,7 @@ Do not merge code merely because it looks similar. Merge only when the business 
 
 Match the process weight to the task:
 
+- **Audit only**: run Discover and produce the Before Editing record. Report definitions, consumers, conflicts, and the recommended canonical source when the evidence is sufficient. Do not modify files or continue into consolidation.
 - **Small change** (touches one existing business fact, no consolidation intended): run a targeted search to locate and reuse the canonical source, then import or call it without adding a parallel implementation. Skip repo-wide counting, clone scans, and the full consolidation report unless the search reveals conflicting or duplicated definitions.
 - **Consolidation or refactor** (merging duplicates, extracting a canonical source, cross-repo work): follow the full Discover -> Before Editing -> While Editing -> Validate workflow.
 - If a small change reveals duplicated definitions of the fact, report the duplication instead of silently expanding scope. Consolidate only when the task authorizes it.
@@ -40,6 +41,8 @@ export const qualifiesForFreeShipping = (subtotal) =>
 ```
 
 All consumers call `qualifiesForFreeShipping()`. UI labels, fee presentation, and API response shapes may differ, but consumers must not re-derive the eligibility rule.
+
+Do not merge two `date + N days` functions merely because their code is similar. A payment due date and a contract end date are different business facts when their meanings, ownership, or boundaries differ.
 
 ## Discover
 

@@ -11,6 +11,8 @@ Keep exactly one canonical function, constant, type, schema, contract, or author
 
 Allow consumers to present or transport the result differently. Do not let them reimplement the underlying status, amount, permission, classification, or business decision.
 
+This rule covers business facts only. Pure layout helpers and helpers without business meaning are out of scope.
+
 Do not merge code merely because it looks similar. Merge only when the business meaning, inputs, boundaries, and ownership are the same. Preserve and document intentional differences.
 
 ## Scope of Effort
@@ -67,12 +69,6 @@ For code involving business facts:
 ## Consolidating
 
 Read `CONSOLIDATION.md` before making consolidation edits. It carries the While Editing and Validate steps: git baseline and commit-authorization rules, compatibility aliases, breaking identifier changes, drift checks, and the final report contents.
-
-## Allowed Differences
-
-Allow different UI labels, colors, layouts, platform adapters, and transport wrappers when they only present or transport the canonical result.
-
-Exclude pure layout helpers and helpers without business meaning from this rule.
 
 ## Completion Gate
 

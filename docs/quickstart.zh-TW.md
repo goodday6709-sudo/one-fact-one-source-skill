@@ -1,6 +1,6 @@
 # One Fact, One Source 快速指南
 
-本指南提供人類可讀的繁體中文說明；Agent 的正式執行規則以 [`SKILL.md`](../skills/one-fact-one-source/SKILL.md) 為準。
+本指南提供人類可讀的繁體中文說明；Agent 的正式執行規則以 [`SKILL.md`](../skills/one-fact-one-source/SKILL.md) 為準，正式整併的施工與驗收步驟另見 [`CONSOLIDATION.md`](../skills/one-fact-one-source/CONSOLIDATION.md)。
 
 ## 一句話理解
 

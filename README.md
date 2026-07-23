@@ -35,6 +35,14 @@ Claude Code project installations may also use:
 <project>/.claude/skills/one-fact-one-source/
 ```
 
+Copy the whole directory. The skill is not a single file:
+
+```text
+SKILL.md            Core rule, discovery, and the audit / small-change paths
+CONSOLIDATION.md    While Editing and Validate steps, read only for consolidation work
+agents/openai.yaml  Codex interface metadata
+```
+
 ## Guides
 
 - [繁體中文快速指南](docs/quickstart.zh-TW.md)

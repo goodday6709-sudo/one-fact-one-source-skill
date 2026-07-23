@@ -1,0 +1,4 @@
+interface:
+  display_name: "一事實一正本"
+  short_description: "統一商業規則、狀態、金額、權限與跨儲存庫的唯一程式正本及驗收"
+  default_prompt: "Use $one-fact-one-source to consolidate this business rule into one canonical implementation and verify all consumers."
